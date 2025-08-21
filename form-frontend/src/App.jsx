@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-
+import axios from 'axios';
 
 function App() {
   /*
@@ -57,10 +57,22 @@ const handleChange = (e) => {
 
 const handleSubmit = (e)=>{
   e.preventDefault()
-  console.log("firstname",formdata.firstname)
+ /* console.log("firstname",formdata.firstname)
     console.log("firstname",formdata.lastname)
     console.log("Age",formdata.age)
     alert(`Hello ${formdata.firstname} and ${formdata.lastname} and ${formdata.age} and ${formdata.email}`)
+    */
+
+    axios.post(' http://localhost:8000/api/v1/formdata', formdata)
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+
 }
   return (
     <>

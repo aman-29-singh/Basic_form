@@ -2,13 +2,14 @@ import express from "express";
 import dotenv from 'dotenv'
 import router from "./routes/user.route.js";
 import mongoose from "mongoose";
+import cors from "cors";
 //import 'dotenv/config'
 dotenv.config() 
 
 const app = express();
 const port = process.env.PORT || 5000
 app.use(express.json())//ye use karna compulsory hai
-
+app.use(cors());
 
 app.listen(port, ()=>{
     console.log(`server is running on port ${process.env.PORT}`)
