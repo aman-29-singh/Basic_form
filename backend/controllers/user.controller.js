@@ -32,8 +32,31 @@ const updateuser = async(req, res, next)=>{
         next (error)
         
    }
-
-
-   
 }
- export {userdata,updateuser};
+
+
+
+   const deleteuser = async(req, res, next)=>{
+    try {
+        const user = await User.findByIdAndDelete(
+            // Syntax is Model.findByIdAndUpdate(id, update, options, callback);
+            
+                req.params.id,
+                req.body,
+                {new: true}//returns updated user
+                )
+
+                if(!user){
+                    return res.status(401).json({message: "User not found"})
+                   }
+
+                   return res.status(200).json(user)
+    } catch (error) {
+        next (error)
+        
+   }
+
+}
+
+
+ export {userdata,updateuser,deleteuser};

@@ -25,8 +25,9 @@ try {
 }
 
 app.use("/api/v1", router)// api/v1/formdata/   //here use app.use
-// http://localhost:8000/api/v1/formdata
-// http://localhost:8000/api/v1/updateuser/:id
+// http://localhost:8000/api/v1/formdata ---   for create user in database
+// http://localhost:8000/api/v1/updateuser/:id  for update user in database
+// http://localhost:8000/api/v1/deleteuser/:id    for delete user in database
 
 app.get("/",(req,res)=>{
     res.send("hello aman")
