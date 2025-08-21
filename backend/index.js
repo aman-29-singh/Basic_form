@@ -26,6 +26,7 @@ try {
 
 app.use("/api/v1", router)// api/v1/formdata/   //here use app.use
 // http://localhost:8000/api/v1/formdata
+// http://localhost:8000/api/v1/updateuser/:id
 
 app.get("/",(req,res)=>{
     res.send("hello aman")
