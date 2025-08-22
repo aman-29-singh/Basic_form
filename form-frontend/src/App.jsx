@@ -2,7 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import axios from 'axios';
-
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 function App() {
   /*
   const [firstname, setFirstname] = useState("")
@@ -76,6 +79,9 @@ const handleSubmit = (e)=>{
 }
   return (
     <>
+    {/* <NavLink to="/header"> Header</NavLink> */}
+    <Header/>
+    
     <form className='flex  ' onSubmit={handleSubmit}>
       <div className=' '>
       <label>firstname</label>
@@ -112,6 +118,8 @@ const handleSubmit = (e)=>{
       <button className='bg-blue-400 ' type='submit'>submit</button>
 
     </form>
+    <Outlet/>
+    <Footer/>
           </>
   )
 }
