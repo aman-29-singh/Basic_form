@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import UserProvider from './context/userContext.js';
+import Card from './components/Card';
 function App() {
   /*
   const [firstname, setFirstname] = useState("")
@@ -78,7 +80,9 @@ const handleSubmit = (e)=>{
 
 }
   return (
-    <>
+    <UserProvider>
+      <Card/>
+
     {/* <NavLink to="/header"> Header</NavLink> */}
     <Header/>
     
@@ -120,7 +124,7 @@ const handleSubmit = (e)=>{
     </form>
     <Outlet/>
     <Footer/>
-          </>
+          </UserProvider>
   )
 }
 
